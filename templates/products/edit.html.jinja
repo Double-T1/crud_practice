@@ -1,0 +1,17 @@
+{% extends "layouts/base.html.jinja" %}
+
+
+{% block content %}
+<div>
+    <form method="POST" action="{{url_for('products.edit', id=product.id)}}">
+        <label for="title">title: </label>
+        <input type="text" name="title" value="{{product.title}}">
+        <label for="description">description: </label>
+        <textarea name="description"rows="10">{{product.description}}</textarea>
+        <label for="price">price: </label>
+        <input type="number" name="price" value="{{product.price}}">
+        <button>save this edit</button>
+    </form>
+    <a href="{{url_for('products.each', id=product.id)}}">discard this edit</a>
+</div>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "layouts/base.html.jinja" %}
+
+
+{% block content %}
+<div>
+    <form method="POST" action="{{url_for('products.add')}}">
+        <label for="title">title: </label>
+        <input type="text" name="title">
+        <label for="description">description: </label>
+        <textarea name="description"rows="10"></textarea>
+        <label for="price">price: </label>
+        <input type="number" name="price">
+        <button>add this new product</button>
+    </form>
+    <a href="{{url_for('products.index')}}">back to home page</a>
+</div>
+{% endblock content %}
